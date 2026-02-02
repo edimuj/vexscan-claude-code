@@ -1,0 +1,18 @@
+{
+  "description": "Vexscan security scanning hooks for Claude Code",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/session-scan.sh",
+            "timeout": 120000,
+            "async": true,
+            "statusMessage": "Vexscan: Scanning plugins for security issues..."
+          }
+        ]
+      }
+    ]
+  }
+}
