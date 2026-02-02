@@ -50,7 +50,7 @@ Vet a plugin for security issues before installation.
 
 **Step 1: Run the vet command**
 \`\`\`bash
-vexscan vet "${SOURCE}" --skip-deps --ast -f json
+vexscan vet "${SOURCE}" --skip-deps --ast --deps -f json
 \`\`\`
 
 **Step 2: Deep analysis**
