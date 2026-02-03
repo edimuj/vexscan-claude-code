@@ -12,7 +12,7 @@
     {
       "name": "vexscan",
       "version": "0.2.0",
-      "source": ".",
+      "source": "./plugin",
       "description": "Security scanner for Claude Code plugins, skills, MCPs, hooks, and configurations. Automatically scans on session start and alerts on threats."
     }
   ]
