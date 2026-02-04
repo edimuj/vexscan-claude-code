@@ -30,9 +30,11 @@ Vexscan scans plugins *before* they can do damage, using pattern detection and A
 ## Quick Start
 
 ```bash
-# Install from marketplace
-/plugin marketplace add edimuj/vexscan-claude-code
-/plugin install vexscan
+# Add the marketplace
+claude plugin marketplace add edimuj/vexscan-claude-code
+
+# Install the plugin
+claude plugin install vexscan@vexscan-claude-code
 ```
 
 That's it. Vexscan now scans your plugins automatically on every session start. AI analysis runs through your existing Claude Code subscription — no extra API keys or costs.
