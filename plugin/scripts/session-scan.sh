@@ -79,15 +79,20 @@ auto_install() {
 }
 
 # Try to find or install vexscan
-VEXSCAN=$(find_vexscan)
+VEXSCAN=$(find_vexscan || echo "")
 
 if [ -z "$VEXSCAN" ]; then
     # Try auto-install
-    VEXSCAN=$(auto_install 2>/dev/null || echo "")
+    VEXSCAN=$(auto_install 2>&1) || {
+        INSTALL_ERR="$VEXSCAN"
+        VEXSCAN=""
+    }
 
     if [ -z "$VEXSCAN" ]; then
-        # Give helpful install message
-        echo '{"userMessage": "[Vexscan] CLI not found. Install with: curl -fsSL https://raw.githubusercontent.com/edimuj/vexscan/main/install.sh | bash", "systemMessage": "[Vexscan] CLI not found. Install with: curl -fsSL https://raw.githubusercontent.com/edimuj/vexscan/main/install.sh | bash"}'
+        # Give helpful install message with error context if available
+        ERR_DETAIL=""
+        [ -n "$INSTALL_ERR" ] && ERR_DETAIL=" Auto-install failed: ${INSTALL_ERR}."
+        echo "{\"userMessage\": \"[Vexscan] CLI not found.${ERR_DETAIL} Install with: curl -fsSL https://raw.githubusercontent.com/edimuj/vexscan/main/install.sh | bash\", \"systemMessage\": \"[Vexscan] CLI not found.${ERR_DETAIL} Install with: curl -fsSL https://raw.githubusercontent.com/edimuj/vexscan/main/install.sh | bash\"}"
         exit 0
     fi
 fi

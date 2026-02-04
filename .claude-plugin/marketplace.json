@@ -1,17 +1,13 @@
 {
   "name": "vexscan-claude-code",
+  "description": "Security scanner for Claude Code plugins, skills, MCPs, and hooks",
   "owner": {
-    "name": "edimuj",
-    "url": "https://github.com/edimuj"
+    "name": "edimuj"
   },
-  "metadata": {
-    "description": "Security scanner for Claude Code plugins, skills, MCPs, and hooks",
-    "repository": "https://github.com/edimuj/vexscan-claude-code"
-  },
+  "repository": "https://github.com/edimuj/vexscan-claude-code",
   "plugins": [
     {
       "name": "vexscan",
-      "version": "0.2.0",
       "source": "./plugin",
       "description": "Security scanner for Claude Code plugins, skills, MCPs, hooks, and configurations. Automatically scans on session start and alerts on threats."
     }
