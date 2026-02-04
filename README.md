@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/vexscan-mascot-256.png" alt="Vexscan Mascot" width="128">
+  <img src="https://raw.githubusercontent.com/edimuj/vexscan/main/assets/vexscan-mascot-256.png" alt="Vexscan Mascot" width="128">
 </p>
 
 <h1 align="center">Vexscan for Claude Code</h1>
